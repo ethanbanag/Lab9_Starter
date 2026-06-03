@@ -101,7 +101,72 @@
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
 
     // Start your code here
-    // You may move this JS to another file if you wish
+    // 0: Console Log
+    errorBtns[0].addEventListener('click', () => console.log("Standard log message."));
+    
+    // 1: Console Error
+    errorBtns[1].addEventListener('click', () => console.error("Error log message."));
+    
+    // 2: Console Count
+    errorBtns[2].addEventListener('click', () => console.count("Count Button Clicks"));
+    
+    // 3: Console Warn
+    errorBtns[3].addEventListener('click', () => console.warn("Warning log message."));
+    
+    // 4: Console Assert
+    errorBtns[4].addEventListener('click', () => {
+      const isConnected = false;
+      console.assert(isConnected, "Assertion failed: User is not connected to the server.");
+    });
+    
+    // 5: Console Clear
+    errorBtns[5].addEventListener('click', () => console.clear());
+    
+    // 6: Console Dir
+    errorBtns[6].addEventListener('click', () => console.dir(document.querySelector('form')));
+    
+    // 7: Console dirxml
+    errorBtns[7].addEventListener('click', () => console.dirxml(document.querySelector('form')));
+    
+    // 8: Console Group Start
+    errorBtns[8].addEventListener('click', () => {
+      console.group("Demo Group");
+      console.log("Inside group block...");
+    });
+    
+    // 9: Console Group End
+    errorBtns[9].addEventListener('click', () => console.groupEnd());
+    
+    // 10: Console Table
+    errorBtns[10].addEventListener('click', () => {
+      console.table([
+        { id: 1, class: "CSE", active: 110 },
+        { id: 2, class: "PHIL", active: 27 }
+      ]);
+    });
+    
+    // 11: Start Timer
+    errorBtns[11].addEventListener('click', () => {
+      console.time("DemoTimer");
+      console.log("Timer started...");
+    });
+    
+    // 12: End Timer
+    errorBtns[12].addEventListener('click', () => {
+      console.timeEnd("DemoTimer");
+      console.log("Timer ended.");
+    });
+    
+    // 13: Console Trace
+    errorBtns[13].addEventListener('click', () => {
+      const initTrace = () => { console.trace("Trace path to this function"); };
+      initTrace();
+    });
+    
+    // 14: Global Error
+    errorBtns[14].addEventListener('click', () => {
+      nonExistentVariable.causeAnError(); 
+    });
   </script>
 </body>
 
